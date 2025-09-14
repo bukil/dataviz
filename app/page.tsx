@@ -28,10 +28,10 @@ export default function Home() {
       <section className="mt-16 w-full max-w-6xl px-6 defer-section">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4 place-items-center">
           {/* Faster orbit with trail (0.4s per revolution) */}
-          <EarthOrbit label="Particle" imgSize={200} animateDot revolveSeconds={0.4} />
-          <EarthOrbit label="Fastest Rocket" imgSize={200} />
-          <EarthOrbit label="Fastest Jet Plane" imgSize={200} />
-          <EarthOrbit label="Fastest Train" imgSize={200} />
+          <EarthOrbit label="Particle" imgSize={200} animateDot revolveSeconds={0.4} timingText="0.13 sec" />
+          <EarthOrbit label="Fastest Rocket" imgSize={200} animateDot revolveSeconds={900} timingText="1h 03s" />
+          <EarthOrbit label="Fastest Jet Plane" imgSize={200} animateDot revolveSeconds={1500} timingText="11.3 hours" />
+          <EarthOrbit label="Fastest Train" imgSize={200} animateDot revolveSeconds={3600} timingText="2.77 days" />
         </div>
       </section>
     </main>

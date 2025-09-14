@@ -7,13 +7,14 @@ interface EarthOrbitProps {
   label?: string;
   revolveSeconds?: number; // time for one full revolution of the dot
   animateDot?: boolean; // enable/disable animated orbiting dot
+  timingText?: string; // human readable period label
 }
 
 /*
   EarthOrbit renders an image (earth.png) centered inside an orbit ring.
   The ring uses a subtle gradient + a slow spin animation to suggest motion.
 */
-export const EarthOrbit: React.FC<EarthOrbitProps> = ({ size = 220, imgSize = 110, label, revolveSeconds = 6, animateDot = false }) => {
+export const EarthOrbit: React.FC<EarthOrbitProps> = ({ size = 220, imgSize = 110, label, revolveSeconds = 6, animateDot = false, timingText }) => {
   const ringThickness = 2; // px
   return (
     <div className="flex flex-col items-center justify-start text-center gap-3 select-none">
@@ -58,8 +59,11 @@ export const EarthOrbit: React.FC<EarthOrbitProps> = ({ size = 220, imgSize = 11
           </div>
         </div>
       </div>
-      {label && (
-        <p className="text-xs uppercase tracking-wider text-white/60">{label}</p>
+      {(label || timingText) && (
+        <div className="flex flex-col items-center gap-1">
+          {label && <p className="text-xs uppercase tracking-wider text-white/60">{label}</p>}
+          {timingText && <p className="text-lg sm:text-xl font-semibold text-white/90 font-[var(--font-playfair)] leading-snug">{timingText}</p>}
+        </div>
       )}
     </div>
   );
