@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import React from "react";
 
 interface ProtectedImageProps {
@@ -17,14 +16,14 @@ export const ProtectedImage: React.FC<ProtectedImageProps> = ({ src, alt, width,
       onContextMenu={(e) => e.preventDefault()}
       aria-label="Protected graphic container"
     >
-      <Image
+      <img
         src={src}
         alt={alt}
         width={width}
         height={height}
         className="w-full h-auto select-none pointer-events-none"
         draggable={false}
-        priority
+        loading="eager"
       />
       <div className="absolute inset-0 pointer-events-auto" onDragStart={(e) => e.preventDefault()} />
       <div className="absolute inset-0 opacity-10 mix-blend-overlay pointer-events-none select-none [background-image:repeating-linear-gradient(45deg,rgba(255,255,255,0.25)_0,rgba(255,255,255,0.25)_2px,transparent_2px,transparent_12px)]" />
