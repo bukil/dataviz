@@ -23,7 +23,9 @@ export const ProtectedImage: React.FC<ProtectedImageProps> = ({ src, alt, width,
         height={height}
         className="w-full h-auto select-none pointer-events-none"
         draggable={false}
-        loading="eager"
+        loading="lazy"
+        decoding="async"
+        fetchPriority="low"
       />
       <div className="absolute inset-0 pointer-events-auto" onDragStart={(e) => e.preventDefault()} />
       <div className="absolute inset-0 opacity-10 mix-blend-overlay pointer-events-none select-none [background-image:repeating-linear-gradient(45deg,rgba(255,255,255,0.25)_0,rgba(255,255,255,0.25)_2px,transparent_2px,transparent_12px)]" />
