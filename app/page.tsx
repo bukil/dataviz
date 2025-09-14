@@ -1,18 +1,24 @@
 
+import Image from "next/image";
+
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white dark:bg-black">
-      <header className="w-full flex justify-center pt-8 pb-4">
-        <h1
-          className="text-4xl sm:text-6xl font-extrabold text-center text-neutral-900 dark:text-neutral-100 tracking-tight"
-          style={{ fontFamily: 'Gotham, var(--font-geist-sans), Arial, sans-serif' }}
-        >
-          Data Visualisation :{' '}
-          <span className="font-thin" style={{ fontFamily: 'Gotham, var(--font-geist-sans), Arial, sans-serif' }}>
-            Comparative Visualizations
-          </span>
-        </h1>
-      </header>
+  <main className="min-h-screen flex flex-col items-center pt-10 px-6 bg-black text-white">
+      <h1 className="font-bold tracking-tight text-center text-3xl sm:text-5xl leading-tight max-w-5xl">
+        Data Visualisation : Comparative Visualizations
+      </h1>
+      <div className="mt-10 w-full max-w-5xl flex justify-center">
+        <div className="w-full">
+          <Image
+            src="/Frame 4.svg"
+            alt="Comparative visualization illustration"
+            width={1600}
+            height={900}
+            className="w-full h-auto"
+            priority
+          />
+        </div>
+      </div>
     </main>
   );
 }
