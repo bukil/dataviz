@@ -6,9 +6,9 @@ import LhcShape from "./LhcShape";
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col items-center pt-10 px-0 bg-black text-white w-full overflow-x-hidden">
-      <div className="px-6 w-full flex flex-col items-center">
-        <h1 className="font-bold tracking-tight text-center text-3xl sm:text-5xl leading-tight max-w-5xl">
-          Data Visualisation : Comparative Visualizations
+      <div className="px-6 w-full flex flex-col items-start">
+        <h1 className="font-bold tracking-tight text-left text-3xl sm:text-5xl leading-tight max-w-5xl">
+          Data Visualisation : <span className="font-light opacity-90">Comparative Visualizations</span>
         </h1>
       </div>
       {/* Large Hadron Collider Shape (multi-ring outline) */}
