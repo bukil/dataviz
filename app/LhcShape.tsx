@@ -25,7 +25,8 @@ const LhcShape: React.FC<LhcShapeProps> = ({
   animateParticle = true,
   particleSpeedSeconds = 6,
 }) => {
-  const size = 900; // viewBox square
+  // Extend width so right-side small rings are fully visible (previously clipped)
+  const size = 960; // viewBox square widened
   return (
     <div className={className}>
       <svg
@@ -38,28 +39,28 @@ const LhcShape: React.FC<LhcShapeProps> = ({
         className="w-full h-auto"
       >
         {/* Outer LHC (slightly squashed ellipse) */}
-        <ellipse cx="450" cy="470" rx="400" ry="200" className="[filter:drop-shadow(0_0_6px_rgba(255,255,255,0.05))]" />
+  <ellipse cx="480" cy="470" rx="400" ry="200" className="[filter:drop-shadow(0_0_6px_rgba(255,255,255,0.05))]" />
 
         {/* Inner SPS ellipse */}
-        <ellipse cx="520" cy="430" rx="250" ry="110" />
+  <ellipse cx="550" cy="430" rx="250" ry="110" />
 
         {/* Transfer line from inner to outer */}
-        <path d="M 675 430 L 830 300" />
+  <path d="M 705 430 L 860 300" />
 
         {/* Upper small ring (PS) */}
-        <ellipse cx="820" cy="270" rx="90" ry="40" />
+  <ellipse cx="850" cy="270" rx="90" ry="40" />
         {/* Booster small ring */}
-        <ellipse cx="860" cy="190" rx="55" ry="25" />
+  <ellipse cx="890" cy="190" rx="55" ry="25" />
 
         {/* Short connector from large to inner ring (left side subtle) */}
-        <path d="M 230 470 L 270 455" />
+  <path d="M 260 470 L 300 455" />
 
         {/* Optional particle path (outer ring) */}
         {animateParticle && (
           <g>
             <defs>
               {/* Ellipse path for rx=400 ry=200 centered at (450,470). Start at left extreme. */}
-              <path id="lhcPath" d="M 50 470 a 400 200 0 1 0 800 0 a 400 200 0 1 0 -800 0" />
+              <path id="lhcPath" d="M 80 470 a 400 200 0 1 0 800 0 a 400 200 0 1 0 -800 0" />
             </defs>
             <circle r="10" fill="#00d4ff" className="[filter:drop-shadow(0_0_8px_rgba(0,212,255,0.8))]">
               <animateMotion

@@ -32,9 +32,24 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen bg-black text-white`}
       >
-        {children}
+        <div className="flex-1 w-full">
+          {children}
+        </div>
+        <footer className="w-full mt-16 border-t border-white/10 py-6 text-center text-xs leading-relaxed px-4">
+          <p className="text-white/70">
+            <a href="https://bukil.github.io/dataviz/" className="underline hover:text-white">Data Vizualisation LHC</a>
+            {" "}© 2025 by{" "}
+            <a href="https://creativecommons.org" className="underline hover:text-white">Mukil Kumar</a>{" "}
+            is licensed under{" "}
+            <a href="https://creativecommons.org/licenses/by/4.0/" className="underline hover:text-white">Creative Commons Attribution 4.0 International</a>
+            <span className="inline-flex items-center ml-1 align-middle">
+              <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="CC" className="w-4 h-4 ml-1 inline-block opacity-80" />
+              <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="BY" className="w-4 h-4 ml-1 inline-block opacity-80" />
+            </span>
+          </p>
+        </footer>
       </body>
     </html>
   );
