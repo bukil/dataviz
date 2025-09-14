@@ -1,5 +1,7 @@
 
 import Image from "next/image";
+import React from "react";
+import ProtectedImage from "./ProtectedImage";
 
 export default function Home() {
   return (
@@ -9,16 +11,12 @@ export default function Home() {
           Data Visualisation : Comparative Visualizations
         </h1>
       </div>
-      <div className="mt-10 w-full">
-        <Image
-          src="/Frame 4.svg"
-          alt="Comparative visualization illustration"
-          width={1920}
-          height={840}
-          className="w-full h-auto select-none"
-          priority
-        />
-      </div>
+      <ProtectedImage
+        src="/Frame 4.svg"
+        alt="Comparative visualization illustration"
+        width={1920}
+        height={840}
+      />
     </main>
   );
 }
