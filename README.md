@@ -1,36 +1,134 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Dataviz Dashboard Sandbox
 
-## Getting Started
+An opinionated starting point for building interactive data visualization dashboards with **Next.js 15 (App Router)** and **Tailwind CSS 4**. The default landing page already includes:
 
-First, run the development server:
+- Placeholder stat tiles
+- Simple inline preview “charts” (replace with a real library)
+- Suggested next steps for adding real data & APIs
+
+---
+
+## Quick Start
+
+Run the dev server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Build & run production locally:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Replacing Placeholder Charts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Install a charting library:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm i recharts
+# or
+npm i @nivo/core @nivo/bar
+# or
+npm i d3
+```
 
-## Deploy on Vercel
+Create a `components/` directory and add reusable chart wrappers (e.g. `BarChart.tsx`).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Data Strategies
+
+- Static JSON in `data/` for early prototyping
+- API Routes under `app/api/*` for dynamic fetching
+- Incremental Static Regeneration (ISR) for hybrid performance
+- Streaming & Suspense for progressive hydration
+
+---
+
+## Why Do I Still See the Default Next.js Template After Deploying?
+
+If your deployed site still shows the original boilerplate instructions, check:
+
+1. Commit & Push: Ensure changes to `app/page.tsx` were committed and pushed to the deployed branch.
+2. Correct Project Directory: Some deployments accidentally target the monorepo root. Make sure the build output is from this folder (`dataviz`).
+3. Build Cache: On Vercel, trigger a fresh build (Deployments → Redeploy with clear cache).
+4. CDN Caching / Browser Cache: Hard refresh (Shift+Reload) or open a private window.
+5. Mismatched Output Directory: You do NOT need `output: export` — leave defaults unless using static export.
+6. Environment Variables: Not relevant yet, but missing required env vars can cause a fallback or error page.
+
+If still stuck, view the deployment logs; confirm `app/page.tsx` content appears in the compiled React server components output.
+
+---
+
+## Project Metadata
+
+Metadata configured in `app/layout.tsx` (Open Graph & basic SEO). Adjust as you integrate real content.
+
+---
+
+## Adding Real Data
+
+Example API route skeleton (create `app/api/stats/route.ts`):
+
+```ts
+// app/api/stats/route.ts
+import { NextResponse } from 'next/server';
+
+export async function GET() {
+	// fetch / compute
+	return NextResponse.json({ sessions: 12400, conversion: 0.028 });
+}
+```
+
+Then fetch it in a server component:
+
+```ts
+const data = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/stats`, { cache: 'no-store' }).then(r => r.json());
+```
+
+---
+
+## Tailwind Notes
+
+Tailwind v4 (next-gen) is enabled with the `@tailwindcss/postcss` preset. Use logical properties and prefer design tokens when possible.
+
+---
+
+## Deployment (Vercel Recommended)
+
+1. Push to GitHub
+2. Import the repo in Vercel
+3. Framework auto-detected: Next.js
+4. Build Command: `npm run build`
+5. Output: (leave blank — Next.js handles)
+6. Redeploy with cache purge if you see stale boilerplate
+
+For self-hosting:
+
+```bash
+npm run build
+npm start -- -p 3000
+```
+
+---
+
+## Roadmap Ideas
+
+- Component library integration (Radix UI / shadcn)
+- Theming (system + stored preference)
+- Auth & per-user data spaces
+- Live updates via WebSockets
+- Configurable dashboard layout (drag & drop)
+
+---
+
+## License
+
+MIT – Use freely, attribution appreciated.
