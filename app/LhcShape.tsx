@@ -38,10 +38,10 @@ const LhcShape: React.FC<LhcShapeProps> = ({
         className="w-full h-auto"
       >
         {/* Outer LHC (slightly squashed ellipse) */}
-        <ellipse cx="450" cy="470" rx="400" ry="300" className="[filter:drop-shadow(0_0_6px_rgba(255,255,255,0.05))]" />
+        <ellipse cx="450" cy="470" rx="400" ry="200" className="[filter:drop-shadow(0_0_6px_rgba(255,255,255,0.05))]" />
 
         {/* Inner SPS ellipse */}
-        <ellipse cx="520" cy="430" rx="250" ry="170" />
+        <ellipse cx="520" cy="430" rx="250" ry="110" />
 
         {/* Transfer line from inner to outer */}
         <path d="M 675 430 L 830 300" />
@@ -58,7 +58,8 @@ const LhcShape: React.FC<LhcShapeProps> = ({
         {animateParticle && (
           <g>
             <defs>
-              <path id="lhcPath" d="M 50 470 a 400 300 0 1 0 800 0 a 400 300 0 1 0 -800 0" />
+              {/* Ellipse path for rx=400 ry=200 centered at (450,470). Start at left extreme. */}
+              <path id="lhcPath" d="M 50 470 a 400 200 0 1 0 800 0 a 400 200 0 1 0 -800 0" />
             </defs>
             <circle r="10" fill="#00d4ff" className="[filter:drop-shadow(0_0_8px_rgba(0,212,255,0.8))]">
               <animateMotion
