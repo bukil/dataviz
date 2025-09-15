@@ -43,7 +43,7 @@ export default function RootLayout({
         <div className="flex-1 w-full">
           {children}
         </div>
-        <footer className="w-full mt-16 border-t border-white/10 py-6 text-center text-xs leading-relaxed px-4">
+        <footer className="w-full mt-0 py-6 text-right text-xs leading-relaxed px-4 bg-black">
           <p className="text-white/70">
             <a href="https://bukil.github.io/dataviz/" className="underline hover:text-white">Data Vizualisation LHC</a>
             {" "}© 2025 by{" "}
