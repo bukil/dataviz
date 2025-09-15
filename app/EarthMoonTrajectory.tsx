@@ -62,7 +62,7 @@ export default function EarthMoonTrajectory() {
 
           {/* Animated particle: continuous motion along combined path */}
           <circle r="6" fill="#3b82f6" filter="url(#glow)">
-            <animateMotion dur="6s" repeatCount="indefinite" rotate="auto">
+            <animateMotion dur="1s" repeatCount="indefinite" rotate="auto">
               <mpath href="#fullTrajectory" />
             </animateMotion>
           </circle>
