@@ -20,6 +20,75 @@ export default function Home() {
         <LhcShape className="w-full max-w-2xl sm:max-w-3xl" particleSpeedSeconds={2} strokeWidth={2} />
       </div>
 
+      {/* LHC Reference Data Table */}
+      <section className="mt-10 w-full max-w-6xl px-6 relative z-10">
+        <div className="overflow-x-auto rounded-lg border border-white/10 bg-white/5 backdrop-blur-sm">
+          <table className="min-w-full text-left text-sm text-white/90">
+            <caption className="sr-only">Key reference data used for the visualizations (LHC and physics constants)</caption>
+            <thead className="text-white/70 uppercase text-xs tracking-wider">
+              <tr>
+                <th className="py-3 px-4">Parameter</th>
+                <th className="py-3 px-4">Value</th>
+                <th className="py-3 px-4">Source / Notes</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-white/10">
+              <tr>
+                <td className="py-3 px-4">Speed of light, c</td>
+                <td className="py-3 px-4">299,792,458 m/s</td>
+                <td className="py-3 px-4">Defined constant</td>
+              </tr>
+              <tr>
+                <td className="py-3 px-4">LHC circumference</td>
+                <td className="py-3 px-4">26.7 km</td>
+                <td className="py-3 px-4">CERN</td>
+              </tr>
+              <tr>
+                <td className="py-3 px-4">Beam energy (Run 3)</td>
+                <td className="py-3 px-4">6.8 TeV per beam</td>
+                <td className="py-3 px-4">CERN (13.6 TeV c.o.m.)</td>
+              </tr>
+              <tr>
+                <td className="py-3 px-4">Beam speed</td>
+                <td className="py-3 px-4">≈ 0.999999991 c</td>
+                <td className="py-3 px-4">Protons near light speed</td>
+              </tr>
+              <tr>
+                <td className="py-3 px-4">Dipole magnet field</td>
+                <td className="py-3 px-4">8.33 T</td>
+                <td className="py-3 px-4">Nominal</td>
+              </tr>
+              <tr>
+                <td className="py-3 px-4">Operating temperature</td>
+                <td className="py-3 px-4">1.9 K</td>
+                <td className="py-3 px-4">Superfluid helium</td>
+              </tr>
+              <tr>
+                <td className="py-3 px-4">Vacuum pressure</td>
+                <td className="py-3 px-4">~10⁻¹³ atm</td>
+                <td className="py-3 px-4">Ultra‑high vacuum</td>
+              </tr>
+              <tr>
+                <td className="py-3 px-4">Bunches per beam</td>
+                <td className="py-3 px-4">Up to ~2808</td>
+                <td className="py-3 px-4">Run‑dependent</td>
+              </tr>
+              <tr>
+                <td className="py-3 px-4">Protons per bunch</td>
+                <td className="py-3 px-4">~1.1 × 10¹¹</td>
+                <td className="py-3 px-4">Typical</td>
+              </tr>
+              <tr>
+                <td className="py-3 px-4">Collision rate</td>
+                <td className="py-3 px-4">Up to 40 MHz crossing</td>
+                <td className="py-3 px-4">HL‑LHC target higher luminosity</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="mt-2 text-[11px] text-white/50">Figures are indicative; consult CERN references for run‑specific values.</p>
+      </section>
+
       {/* Use relative path (no leading slash) so it works when the site is served from a sub-path (e.g. GitHub Pages /repo-name/) */}
       <ProtectedImage
         src="Frame 4.svg"

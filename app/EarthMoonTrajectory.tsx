@@ -45,20 +45,21 @@ export default function EarthMoonTrajectory() {
                 <feMergeNode in="SourceGraphic" />
               </feMerge>
             </filter>
-            {/* Combined path: start at Earth's rightmost point, enlarged Earth orbit (r=90), transfer, Moon orbit (r=45), return */}
+            {/* Combined path: start at Earth's rightmost point, Earth orbit (r=90),
+               smooth transfer to Moon using cubic Bézier curves, Moon orbit (r=45), smooth return */}
             <path
               id="fullTrajectory"
               d="M 180 140
                  a 90 90 0 1 0 -180 0
                  a 90 90 0 1 0 180 0
-                 Q 320 50 545 140
+                 C 260 110 430 100 545 140
                  a 45 45 0 1 0 90 0
                  a 45 45 0 1 0 -90 0
-                 Q 320 230 180 140"
+                 C 430 180 260 170 180 140"
             />
           </defs>
           {/* Visible trajectory guide */}
-          <use href="#fullTrajectory" stroke="white" strokeOpacity="0.15" strokeWidth="1" fill="none" />
+          <use href="#fullTrajectory" stroke="white" strokeOpacity="0.15" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" fill="none" />
 
           {/* Animated particle: continuous motion along combined path */}
           <circle r="6" fill="#3b82f6" filter="url(#glow)">
