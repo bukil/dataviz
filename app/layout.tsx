@@ -44,7 +44,7 @@ export default function RootLayout({
           {children}
         </div>
         <footer className="w-full mt-0 py-6 text-right text-xs leading-relaxed px-4 bg-black">
-          <p className="text-white/70">
+          <p className="text-white/80 text-shadow">
             <a href="https://bukil.github.io/dataviz/" className="underline hover:text-white">Data Vizualisation LHC</a>
             {" "}© 2025 by{" "}
             <a href="https://creativecommons.org" className="underline hover:text-white">Mukil Kumar</a>{" "}
