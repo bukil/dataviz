@@ -68,7 +68,7 @@ export default function EarthMoonTrajectory() {
           </circle>
         </svg>
       </div>
-      <p className="text-xs text-white/60 tracking-wide uppercase">Trajectory: Earth loop → Moon loop → repeat</p>
+      <p className="text-xs text-white/60 tracking-wide uppercase">A trip to the Moon would take just over 1 second.</p>
     </div>
   );
 }
