@@ -17,7 +17,7 @@ export default function Home() {
       </div>
       {/* Large Hadron Collider Shape (multi-ring outline) */}
       <div className="mt-12 w-full flex justify-center px-6 defer-section relative z-10">
-        <LhcShape className="w-full max-w-2xl sm:max-w-3xl" particleSpeedSeconds={2} strokeWidth={2} />
+        <LhcShape className="w-full max-w-2xl sm:max-w-3xl" particleSpeedSeconds={1.2} strokeWidth={2} />
       </div>
 
       {/* LHC Reference Data Table */}
