@@ -27,11 +27,51 @@ export default function Home() {
       {/* Orbit grid */}
       <section className="mt-16 w-full max-w-6xl px-6 defer-section">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4 place-items-center">
-          {/* Faster orbit with trail (0.4s per revolution) */}
-          <EarthOrbit label="Particle" imgSize={200} animateDot revolveSeconds={0.4} timingText="0.13 sec" />
-          <EarthOrbit label="Fastest Rocket" imgSize={200} animateDot revolveSeconds={900} timingText="1h 03s" />
-          <EarthOrbit label="Fastest Jet Plane" imgSize={200} animateDot revolveSeconds={1500} timingText="11.3 hours" />
-          <EarthOrbit label="Fastest Train" imgSize={200} animateDot revolveSeconds={3600} timingText="2.77 days" />
+          {/* Faster orbit with trail (was 0.4s) - now slightly faster & custom blue glowing smaller particle */}
+          <EarthOrbit
+            label="Particle"
+            imgSize={200}
+            animateDot
+            revolveSeconds={0.3}
+            dotSizePx={6}
+            dotColor="#3b82f6" /* Tailwind blue-500 */
+            dotGlow
+            glowStrength={2.2}
+            timingText="0.13 sec"
+          />
+          <EarthOrbit
+            label="Fastest Rocket"
+            imgSize={200}
+            animateDot
+            revolveSeconds={900}
+            dotSizePx={5}
+            dotColor="#94a3b8" /* slate-400 */
+            dotGlow
+            glowStrength={0.6}
+            timingText="1h 03s"
+          />
+          <EarthOrbit
+            label="Fastest Jet Plane"
+            imgSize={200}
+            animateDot
+            revolveSeconds={7200} /* slowed, but display original label */
+            dotSizePx={5}
+            dotColor="#64748b" /* slate-500 */
+            dotGlow
+            glowStrength={0.5}
+            timingText="11.3 hours"
+          />
+          <EarthOrbit
+            label="Fastest Train"
+            imgSize={200}
+            animateDot
+            revolveSeconds={28800} /* slowed (8 hours per revolution) while keeping displayed text */
+            dotSizePx={5}
+            dotColor="#475569" /* slate-600 */
+            dotGlow
+            glowStrength={0.45}
+            timingText="2.77 days"
+          />
         </div>
       </section>
 
