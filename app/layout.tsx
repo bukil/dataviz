@@ -19,13 +19,13 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Dataviz Dashboard",
+  title: "Dataviz Project",
   description: "Interactive data visualization sandbox",
   keywords: ["data visualization", "charts", "dashboard", "Next.js"],
   authors: [{ name: "Dataviz" }],
   openGraph: {
-    title: "Dataviz Dashboard",
-    description: "Interactive data visualization sandbox",
+    title: "Dataviz Project",
+    description: "Data visualization",
     type: "website",
   },
 };
