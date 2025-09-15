@@ -34,6 +34,11 @@ export default function Home() {
           <EarthOrbit label="Fastest Train" imgSize={200} animateDot revolveSeconds={3600} timingText="2.77 days" />
         </div>
       </section>
+
+      {/* Follow-up heading */}
+      <div className="mt-20 w-full max-w-6xl px-6">
+        <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">If?</h2>
+      </div>
     </main>
   );
 }
