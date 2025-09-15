@@ -86,7 +86,7 @@ export default function Home() {
             </tbody>
           </table>
         </div>
-        <p className="mt-2 text-[11px] text-white/50">Figures are indicative; consult CERN references for run‑specific values.</p>
+        <p className="mt-2 text-[11px] text-white/50">The figures are based on scientific studies some are and approximate and calculated with the help of AI.</p>
       </section>
 
       {/* Use relative path (no leading slash) so it works when the site is served from a sub-path (e.g. GitHub Pages /repo-name/) */}
