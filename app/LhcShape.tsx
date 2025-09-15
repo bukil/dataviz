@@ -44,8 +44,8 @@ const LhcShape: React.FC<LhcShapeProps> = ({
         {/* Inner SPS ellipse */}
   <ellipse cx="550" cy="430" rx="250" ry="110" />
 
-        {/* Transfer line from inner to outer */}
-  <path d="M 705 430 L 860 300" />
+        {/* Tangential transfer line from SPS (inner) to PS (upper small ring) */}
+  <path d="M 785 392 L 772 250" />
 
         {/* Upper small ring (PS) */}
   <ellipse cx="850" cy="270" rx="90" ry="40" />
@@ -54,6 +54,19 @@ const LhcShape: React.FC<LhcShapeProps> = ({
 
         {/* Short connector from large to inner ring (left side subtle) */}
   <path d="M 260 470 L 300 455" />
+
+        {/* Tangent transfer lines connecting ring-to-ring end-to-end (varying thickness) */}
+        <g vectorEffect="non-scaling-stroke">
+          {/* Outer LHC (boundary) → SPS (boundary) */}
+          <path d="M 880 470 L 800 430" strokeOpacity="0.85" strokeWidth={2.2} />
+          {/* Outer LHC (boundary) → PS (boundary) */}
+          <path d="M 842 386 L 928 250" strokeOpacity="0.7" strokeWidth={1.6} />
+          {/* PS (boundary) → Booster (boundary) */}
+          <path d="M 928 290 L 938 178" strokeOpacity="0.7" strokeWidth={1.4} />
+          {/* Very thin auxiliary lines from outer to SPS (boundary points) */}
+          <path d="M 842 554 L 800 430" strokeOpacity="0.5" strokeWidth={0.8} />
+          <path d="M 820 520 L 770 430" strokeOpacity="0.5" strokeWidth={0.8} />
+        </g>
 
         {/* Optional particle path (outer ring) */}
         {animateParticle && (
