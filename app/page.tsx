@@ -2,6 +2,8 @@
 import ProtectedImage from "./ProtectedImage";
 import EarthOrbit from "./EarthOrbit";
 import LhcShape from "./LhcShape";
+import EarthMoonStatic from "./EarthMoonStatic";
+import EarthMoonTrajectory from "./EarthMoonTrajectory";
 
 export default function Home() {
   return (
@@ -78,6 +80,13 @@ export default function Home() {
       {/* Follow-up heading */}
       <div className="mt-20 w-full max-w-6xl px-6">
         <h2 className="text-4xl sm:text-5xl font-bold tracking-tight">If?</h2>
+        <p className="mt-4 max-w-3xl text-base sm:text-lg leading-relaxed text-white/90 font-semibold tracking-tight">
+          What if humans could move like particles?
+        </p>
+        {/* Earth & Moon trajectory demo */}
+        <div className="mt-16 w-full flex justify-center">
+          <EarthMoonTrajectory />
+        </div>
       </div>
     </main>
   );
